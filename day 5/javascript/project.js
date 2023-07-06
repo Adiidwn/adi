@@ -144,7 +144,7 @@ const renderSubmit = () =>{
     <!-- ICON -->
         <div class="btnMother">
             <div class="btnFather">
-                <button class="btn-edit">Edit</button>
+                <button class="btn-edit" >Edit</button>
                 <button class="btn-delete">Delete</button>
             </div>
     <!-- BUTTON -->

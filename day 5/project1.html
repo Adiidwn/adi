@@ -36,7 +36,9 @@
         }
         .container input:checked ~ .checkmark {
             background-color: black;
+
         }
+        
         .container input:checked ~ .checkmark:after {
             display: block;
         }
@@ -76,7 +78,7 @@
         <form class="label">
 <!-- Project name -->
             <label for="projectname">Project Name</label>
-            <input type="text" id="projectname" name="projectname"/>
+            <input  type="text" id="projectname" name="projectname"/>
 <!-- START,END DATE -->
         <div style="height: 40px; width: 100%;margin-left: 0;margin-top: 0; display: flex;position: relative;flex-direction: column;background-color:rgb(214, 218, 218);margin-bottom: 30px;">
 
@@ -131,53 +133,23 @@
 
         </form>
     </div>
-    <div style=" height: 189px;">
+    <div style=" height: 10px;">
     </div>  
 
-    <div style="background-color: azure;height: 950px;">
-        <div>
-            <h1 class="fontbio2">MY PROJECT
+    <div style="background-color: rgb(248, 244, 244);height: 950px;">
+        <div >
+            <h1 class="h1myproject">MY PROJECT
             </h1>
-            <div class="cardProject">
+            <div class="grid-container">
                 <!-- ISI PROJECT -->
-                <div class="projectItem">
-                    <img class="projectImage" src="images/adi.jpg" />
-                <!-- IMAGES -->
-                    <div class="imageProject" >Title</div>
-                <!-- TITLE -->
-                    <div class="dateProject">12 jam
-                    </div>
-                <!-- DURASI -->
-                    <div class="contentProject">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptas deleniti cupiditate totam nostrum dolor consequatur nobis, necessitatibus expedita adipisci sit, exercitationem officiis itaque, quae laboriosam accusamus quidem ratione doloribus?
-                    </div>
-                <!-- ISI CONTENT -->
-                    <div  class="iconProject">
-                        <p id="node1" style="display: none;"><i  class="fa-brands fa-node-js"></i></p>
-                        <p id=""><i  class="fa-brands fa-node-js"></i></p>
-                        <p id=""><i  class="fa-brands fa-node-js"></i></p>
-                        <p id=""><i  class="fa-brands fa-node-js"></i></p>
-                        
-                    
-                    </div>
-                <!-- ICON -->
-                    <div class="btnMother">
-                        <div class="btnFather">
-                            <button class="btn-edit">Edit</button>
-                            <button class="btn-delete">Delete</button>
-                        </div>
-                <!-- BUTTON -->
-                </div>
-                        
-                    
-                </div> 
-            </div>
-            <div id="contents" class="cardProject"></div>
+                
+            <div id="contents" class="grid-item"></div>
         </div>
 <!-- CARDS -->
     
 <!-- ISI PROJECT -->
-
+        </div>
+    </div>
 
         
     <script src="javascript/project.js"></script>
