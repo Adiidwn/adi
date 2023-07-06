@@ -5,6 +5,7 @@
     margin-top: 0px;
     width: 290px;
     height: auto;
+    background-color: white;
 }
 .projectItem{
     margin: 0;
@@ -83,4 +84,10 @@
     font-size: 28px;
     height: 35px;
     width: 93%;
+    display: flex;
+    gap: 15px;
+}
+#node1{
+    display: none;
+
 }

@@ -1,5 +1,6 @@
-
-let dataProject = []
+    let dataProject = []
+    
+    
 const submitProject = (event) =>{
     event.preventDefault()
     let projectname = document.getElementById("projectname").value
@@ -11,42 +12,11 @@ const submitProject = (event) =>{
     let nextjs = document.getElementById("nextjs").value
     let typescript = document.getElementById("typescript").value
     let myFile = document.getElementById("myFile").files
+    let checkBoxes = document.querySelectorAll('.checkbox')
     
-    let firstDate = new Date(startdate)
-    let lastDate = new Date(enddate) 
-    let gapDate = lastDate - firstDate
-    
-    
-
-    let distanceSeconds = Math.floor(gapDate / 1000)
-    let distanceMinutes = Math.floor(distanceSeconds / 60)
-    let distanceHours = Math.floor(distanceMinutes / 60)
-    let distanceDay = Math.floor(distanceHours / 24)
-    let distanceWeek = Math.floor(distanceDay / 7)
-    let distanceMonth = Math.floor(distanceWeek / 4)
-    let distanceYear = Math.floor(distanceMonth / 12)
-
-    console.log("DAY : ",distanceWeek)
-    let distanceDuration =""
-    if (gapDate > distanceHours) {
-        distanceDuration= `durasi: ${distanceDay} hari `
-    } else if(distanceDay >= distanceWeek) {
-        distanceDuration= `durasi: ${distanceHours} minggu`
-    } else if(distanceWeek >= distanceMonth) {
-        distanceDuration= `durasi: ${distanceDay} bulan `
-    } else if(distanceMonth >= distanceYear) {
-        distanceDuration= `durasi: ${distanceMonth} tahun`
-        }
-
-    console.log("HARI",distanceDuration)
-
-    const nodejsIcon = '<i class="fa-brands fa-node-js"></i>'
-    const reactjsIcon = '<i class="fa-brands fa-react"></i>'
-    const nextjsIcon = '<i class="fa-brands fa-jsfiddle"></i>'
-    const typescriptIcon = '<i class="fa-solid fa-scroll"></i>'
-
+    // ALERT BLANK 
     if (projectname === "") {
-        return false('Project harus diisi!')
+        return alert('Project harus diisi!')
     } else if (startdate === "") {
         return alert('Start Date harus diisi!')
     } else if (enddate === "") {
@@ -56,7 +26,69 @@ const submitProject = (event) =>{
     } else if (myFile === "") {
         return alert('File harus diisi!')
     }
+    // 
+    // ICON COSTOMIZE
+    let nodejsIcon = '<i class="fa-brands fa-node-js"></i>'
+    let reactjsIcon = '<i class="fa-brands fa-react"></i>'
+    let nextjsIcon = '<i class="fa-brands fa-jsfiddle"></i>'
+    let typescriptIcon = '<i class="fa-solid fa-scroll"></i>'
 
+    let iconnodeJs = ""
+    let iconreactJS = ""
+    let iconnextJS = ""
+    let icontypescript = ""
+    
+
+    if(checkBoxes[0].checked == true){
+        iconnodeJs=nodejsIcon
+    }
+    if(checkBoxes[1].checked == true){
+        iconreactJS=reactjsIcon
+    }
+    if(checkBoxes[2].checked == true){
+        iconnextJS=nextjsIcon
+    }
+    if(checkBoxes[3].checked == true){
+        icontypescript=typescriptIcon
+    }
+// 
+    
+    
+// 
+// MATH DURATION
+    let firstDate = new Date(startdate)
+    let lastDate = new Date(enddate) 
+    let gapDate = lastDate - firstDate
+
+    let distanceSeconds = Math.floor(gapDate / 1000)
+    let distanceMinutes = Math.floor(distanceSeconds / 60)
+    let distanceHours = Math.floor(distanceMinutes / 60)
+    let distanceDay = Math.floor(distanceHours / 24)
+    let distanceWeek = Math.floor(distanceDay / 7)
+    let distanceMonth = Math.floor(distanceWeek / 4)
+    let distanceYear = Math.floor(distanceMonth / 12)
+
+    console.log("minggu : ",distanceWeek)
+    let distanceDuration = ""
+    if (distanceDay < 7){
+        distanceDuration =`durasi ${distanceDay} day `
+    }  else if(distanceDay > 6 ) {
+        distanceDuration= `durasi: ${distanceWeek} week`
+    }  
+    
+    if(distanceWeek > 3) {
+        distanceDuration= `durasi: ${distanceMonth} month `
+    } else if(distanceWeek > 47) {
+        distanceDuration= `durasi: ${distanceYear} year `
+    }
+   
+    console.log("bulan",distanceHours)
+    console.log("ISI",distanceDuration)
+// 
+    
+   
+
+    
    
 // untuk membuat object file menjadi URL secara sementara, agar tampil
 myFile = URL.createObjectURL(myFile[0])
@@ -68,10 +100,14 @@ myFile = URL.createObjectURL(myFile[0])
             description,
             myFile, // bentuknya blob url (sementara)
             distanceDuration,
-            nodejsIcon,
-            reactjsIcon,
-            nextjsIcon,
-            typescriptIcon,
+            iconnodeJs,
+            iconreactJS,
+            iconnextJS,
+            icontypescript,
+            // nodejsIcon,
+            // reactjsIcon,
+            // nextjsIcon,
+            // typescriptIcon,
         }
     dataProject.push(project)
     renderSubmit()
@@ -100,10 +136,10 @@ const renderSubmit = () =>{
         </div>
     <!-- ISI CONTENT -->
         <div class="iconProject">
-        ${dataProject[index].nodejsIcon}
-        ${dataProject[index].reactjsIcon}
-        ${dataProject[index].nextjsIcon}
-        ${dataProject[index].typescriptIcon}
+        <p>${dataProject[index].iconnodeJs} </p>
+        <p>${dataProject[index].iconreactJS} </p>
+        <p>${dataProject[index].iconnextJS} </p>
+        <p>${dataProject[index].icontypescript} </p>
         </div>
     <!-- ICON -->
         <div class="btnMother">
@@ -117,6 +153,15 @@ const renderSubmit = () =>{
     }
 }
 
+let nodeJs = document.querySelector('.nodeJS')
+console.log(nodeJs)
+
 // setInterval(() => {
 //     renderBlog()
 // }, -1000)
+// const iconRender = () =>{
+//     let nodejsGambar = document.getElementById("nodejsGambar")
+//     nodejsGambar.style.display = "none"
+
+
+   
