@@ -7,12 +7,12 @@ const submitProject = (event) =>{
     let startdate = document.getElementById("startdate").value
     let enddate = document.getElementById("enddate").value
     let description = document.getElementById("description").value
-    let nodejs = document.getElementById("nodejs").value
-    let reactjs = document.getElementById("reactjs").value
-    let nextjs = document.getElementById("nextjs").value
-    let typescript = document.getElementById("typescript").value
+    let nodejs = document.getElementById("nodejs")
+    let reactjs = document.getElementById("reactjs")
+    let nextjs = document.getElementById("nextjs")
+    let typescript = document.getElementById("typescript")
     let myFile = document.getElementById("myFile").files
-    let checkBoxes = document.querySelectorAll('.checkbox')
+    
     
     // ALERT BLANK 
     if (projectname === "") {
@@ -39,16 +39,16 @@ const submitProject = (event) =>{
     let icontypescript = ""
     
 
-    if(checkBoxes[0].checked == true){
+    if(nodejs.checked == true){
         iconnodeJs=nodejsIcon
     }
-    if(checkBoxes[1].checked == true){
+    if(reactjs.checked == true){
         iconreactJS=reactjsIcon
     }
-    if(checkBoxes[2].checked == true){
+    if(nextjs.checked == true){
         iconnextJS=nextjsIcon
     }
-    if(checkBoxes[3].checked == true){
+    if(typescript.checked == true){
         icontypescript=typescriptIcon
     }
 // 
