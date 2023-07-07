@@ -104,10 +104,7 @@ myFile = URL.createObjectURL(myFile[0])
             iconreactJS,
             iconnextJS,
             icontypescript,
-            // nodejsIcon,
-            // reactjsIcon,
-            // nextjsIcon,
-            // typescriptIcon,
+            
         }
     dataProject.push(project)
     renderSubmit()
