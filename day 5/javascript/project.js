@@ -124,9 +124,9 @@ const renderSubmit = () =>{
     <div id="contents" class="cardProject">
     <!-- ISI PROJECT -->
     <div class="projectItem">
-        <img class="projectImage" src="${dataProject[index].myFile}" />
+    <img class="projectImage" src="${dataProject[index].myFile}" />
     <!-- IMAGES -->
-        <div class="imageProject" >${dataProject[index].projectname}</div>
+    <a href="" class="linkProject"> <div class="imageProject" >${dataProject[index].projectname}</div></a>
     <!-- TITLE -->
         <div class="dateProject">${dataProject[index].distanceDuration}
         </div>
