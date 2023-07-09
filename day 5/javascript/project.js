@@ -27,7 +27,7 @@ const submitProject = (event) =>{
         return alert('File harus diisi!')
     }
     // 
-    // ICON COSTOMIZE
+    // ICON CHECKER
     let nodejsIcon = '<i class="fa-brands fa-node-js"></i>'
     let reactjsIcon = '<i class="fa-brands fa-react"></i>'
     let nextjsIcon = '<i class="fa-brands fa-jsfiddle"></i>'
@@ -55,7 +55,7 @@ const submitProject = (event) =>{
     
     
 // 
-// MATH DURATION
+// MATH DURATION 
     let firstDate = new Date(startdate)
     let lastDate = new Date(enddate) 
     let gapDate = lastDate - firstDate
@@ -68,22 +68,29 @@ const submitProject = (event) =>{
     let distanceMonth = Math.floor(distanceWeek / 4)
     let distanceYear = Math.floor(distanceMonth / 12)
 
-    console.log("minggu : ",distanceWeek)
     let distanceDuration = ""
     if (distanceDay < 7){
-        distanceDuration =`durasi ${distanceDay} day `
-    }  else if(distanceDay > 6 ) {
+        distanceDuration =`durasi: ${distanceDay} day `
+    }  else if(distanceDay >= 7) {
         distanceDuration= `durasi: ${distanceWeek} week`
-    }  
-    
-    if(distanceWeek > 3) {
-        distanceDuration= `durasi: ${distanceMonth} month `
-    } else if(distanceWeek > 47) {
-        distanceDuration= `durasi: ${distanceYear} year `
+    }  if (distanceWeek >= 4) {
+        distanceDuration = `durasi: ${distanceMonth} month`
+    }  if (distanceMonth > 11){
+        distanceDuration = `durasi: ${distanceYear} year`
     }
+
+    console.log("week", distanceWeek)
+    console.log("bulan : ",distanceMonth)
+    console.log("tahun : ",distanceYear)
+    console.log("hari : ",distanceDay)
+    
+    // if(distanceWeek < 4) {
+    //     distanceDuration= `durasi: ${distanceMonth} month `
+    // } else if(distanceWeek < 47) {
+    //     distanceDuration= `durasi: ${distanceYear} year `
+    // }
    
-    console.log("bulan",distanceHours)
-    console.log("ISI",distanceDuration)
+   
 // 
     
    
